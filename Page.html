@@ -12,9 +12,46 @@
 	SubmitBtn = document.querySelector(".Submit");
 	SubmitBtn.addEventListener('click', ()=> {
 		let text = document.getElementById("textbox").value;
-		let countVowels = Count(text);
+		let countVowels = CountVowels(text);
 	})
-
+	let CountVowels = (string) => {
+		_lowerString = string.toLowerCase();
+		let OurVowels = []; // store vowels here, the number can be its length
+		for(i = 0; i < _lowerString.length; i++)
+		{
+			let char = FindVowels(_lowerString[i]);
+			if(char === true) 
+			OurVowels.push(_lowerString[i]);
+		}
+		document.getElementById("Replace").innerHTML = `There are ${OurVowels.length} vowels and the vowels are ${OurVowels.join(", ")}`;
+	}
+	let FindVowels = (char) =>
+	{
+		switch(char)
+		{
+			case "a":
+			return true;
+			break;
+			case "e":
+			return true;
+			break;
+			case "i":
+			return true;
+			break;
+			case "o":
+			return true;
+			break;
+			case "u":
+			return true;
+			break;
+			case "y": //put Y as a vowel for simplicity.
+			return true;
+			break;
+			default:
+			return false;
+			break;
+		}
+	}
 </script>
 </body>
 </html>
