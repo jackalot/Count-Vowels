@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Count Vowels</title>
+</head>
+<body>
+<input type="text" id="textbox"> </input>
+<button class="Submit">Count Vowels</button>
+<p id="Replace"></p>
+<script type="text/javascript">
+	SubmitBtn = document.querySelector(".Submit");
+	SubmitBtn.addEventListener('click', ()=> {
+		let text = document.getElementById("textbox").value;
+		let countVowels = Count(text);
+	})
+
+</script>
+</body>
+</html>
